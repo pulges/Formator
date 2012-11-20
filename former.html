@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title></title>
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="underscore-min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="json2.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spin.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jquery.spin.js" type="text/javascript" charset="utf-8"></script>
+  <script src="application.js" type="text/javascript" charset="utf-8"></script>
+  
+</head>
+<body>
+  <div id="theform">
+    
+  </div>
+  
+  <script type="text/javascript">
+    var studentForm = {
+        url: 'http://www.ee',
+        institution_email: "aa@bb.ee",
+        user_email: "mati@k.ee",
+        title: "Rmk tellimisvormi pealkiri",
+        msg_title: "Rmk tellimisvormi pealkiri",
+        user_msg: "Tänan, et tellisite!",
+        submit_txt: "Esita tellimus",
+        lang: "en",
+        success: "Saadetud!",
+        data: [ 
+             {
+                type: "title",
+                name: "",
+                value: "Pealkiri 1",
+                position: 1
+            },
+            {
+                type: "string",
+                name: "Looduskeskus",
+                value: "Kunda looduskeskus",
+                position: 2,
+                disabled: true
+            },
+            {
+                type: "text",
+                name: "Tellija nimi",
+                value: "Mati Karu",
+                position: 3
+            },
+            {
+                type: "title",
+                name: "",
+                value: "Tellitud lisad",
+                position: 4
+            },
+            {
+                type: "radio",
+                name: "Tellija nimi",
+                value: "Mati Karu",
+                position: 5,
+                options: ['Mati Karu', 'Jaana Maru']
+            },
+            {
+                type: "select",
+                name: "Sada kana",
+                value: "kaks",
+                position: 6,
+                options: ['üks', 'kaks', 'kolm']
+            },
+            {
+                type: "string",
+                name: "Kasutaja email",
+                value: "",
+                position: 7,
+                bind: 'user_email',
+                required: true,
+                valid_pattern: '^([^@\\s]+)@((?:[-a-z0-9]+\\.)+[a-z]{2,})$',
+                invalid_msg: 'Nii küll ei lähe'
+            },
+        ]
+    };
+    
+    $('#theform').formator(studentForm);
+  </script>
+  
+</body>
+</html>
